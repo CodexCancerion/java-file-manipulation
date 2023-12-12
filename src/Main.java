@@ -7,6 +7,13 @@ public class Main {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/text-file"));
             writer.write("Hello world");
+            writer.write("\nHello again");
+            writer.write("\nHello Iverson");
+            writer.write("\n90 degrees");
+            writer.write("\nHello Jerick");
+            writer.write("\nThank you");
+            writer.write("\nBrother");
+            writer.write("\nThank you");
             writer.close();
         } catch (Exception e){
             e.printStackTrace();
@@ -15,8 +22,11 @@ public class Main {
         //FILE READER
         try {
             BufferedReader reader = new BufferedReader(new FileReader("src/text-file"));
-            System.out.println(reader.readLine());
-            System.out.println(reader.readLine());
+            String line;
+            do {
+                line = reader.readLine();
+                System.out.println(line);
+            }while (line != null);
             reader.close();
         } catch (Exception e){
             e.printStackTrace();
