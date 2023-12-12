@@ -3,17 +3,15 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        //INITIALIZE String Array
+        String info[] = {"Hello world","\nHello again", "\nHello Iverson", "\n90 degrees", "\nHello Jerick", "\nThank you", "\nBrother", "\nThank you", "\nEnding"};
+
         //FILE WRITER
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/text-file"));
-            writer.write("Hello world");
-            writer.write("\nHello again");
-            writer.write("\nHello Iverson");
-            writer.write("\n90 degrees");
-            writer.write("\nHello Jerick");
-            writer.write("\nThank you");
-            writer.write("\nBrother");
-            writer.write("\nThank you");
+            for (int i = 0; i< info.length; i++){
+                writer.write(info[i]);
+            }
             writer.close();
         } catch (Exception e){
             e.printStackTrace();
@@ -25,6 +23,7 @@ public class Main {
             String line;
             do {
                 line = reader.readLine();
+                if (line == null) break;
                 System.out.println(line);
             }while (line != null);
             reader.close();
