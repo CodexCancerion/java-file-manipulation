@@ -13,15 +13,20 @@ public class Main {
         }
 
         //FILE WRITER
+        //To append text on existing file, put [true] besides the file path on FileWriter
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("src/text-file.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src/text-file.txt", true));
 //            for (int i = 0; i< info.length; i++){
 //                writer.write(info[i]);
 //            }
+//
+//            for (int i = 0; i< ascending.length; i++){
+//                writer.write(String.valueOf(ascending[i]+"\n"));
+//            }
 
-            for (int i = 0; i< ascending.length; i++){
-                writer.write(String.valueOf(ascending[i]+"\n"));
-            }
+            writer.append("\nJeric");
+            writer.append("\nJeric");
+
             writer.close();
         } catch (Exception e){
             e.printStackTrace();
